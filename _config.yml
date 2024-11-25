@@ -22,6 +22,8 @@ title: "Chernet"
 email: "c.asmamaw"
 description: "Personal portfolio website"
 
+baseurl: "" 
+
 # Navigation
 nav_links:
   - title: "About"
