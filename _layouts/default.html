@@ -145,7 +145,7 @@
             /* Container modifications */
             .container {
                 max-width: 1200px;
-                padding: 0 1.5rem;
+                padding: 0 2rem;
             }
 
             /* Main content area */
@@ -159,31 +159,31 @@
     <body>
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a style="font-size: 40px; font-family: cursive; font-weight: 900;" class="navbar-brand" href="{{ '/' | relative_url }}">
-                    Chernet
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/about' %}active{% endif %}" href="{{ '/about' | relative_url }}">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/cv' %}active{% endif %}" href="{{ '/cv' | relative_url }}">CV</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/projects' %}active{% endif %}" href="{{ '/projects' | relative_url }}">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/blog' %}active{% endif %}" href="{{ '/blog' | relative_url }}">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {% if page.url == '/contact' %}active{% endif %}" href="{{ '/contact' | relative_url }}">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+            <a style="font-size: 40px; font-family: cursive; font-weight: 900;" class="navbar-brand" href="{{ '/' | relative_url }}">
+                Chernet
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if page.url == '/about' %}active{% endif %}" href="{{ '/about' | relative_url }}" style="font-weight: bold; font-size: 1.1rem;">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page.url == '/cv' %}active{% endif %}" href="{{ '/cv' | relative_url }}" style="font-weight: bold; font-size: 1.1rem;">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page.url == '/projects' %}active{% endif %}" href="{{ '/projects' | relative_url }}" style="font-weight: bold; font-size: 1.1rem;">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page.url == '/blog' %}active{% endif %}" href="{{ '/blog' | relative_url }}" style="font-weight: bold; font-size: 1.1rem;">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page.url == '/contact' %}active{% endif %}" href="{{ '/contact' | relative_url }}" style="font-weight: bold; font-size: 1.1rem;">Contact</a>
+                </li>
+                </ul>
+            </div>
             </div>
         </nav>
 

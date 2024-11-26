@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chernet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         :root {
             --primary: #2563eb;
@@ -27,7 +28,6 @@
 
         .container {
             max-width: 1200px;
-            margin: 0 auto;
             padding: 0 2rem;
         }
 
@@ -36,7 +36,7 @@
         }
 
         .hero-section {
-            min-height: 80vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             position: relative;
@@ -104,6 +104,7 @@
         .hero-buttons {
             display: flex;
             gap: 1.5rem;
+            align-items: center;
         }
 
         .btn {
@@ -142,7 +143,7 @@
         }
 
         .skills-section {
-            padding: 8rem 0;
+            padding: 1rem 0;
         }
 
         .section-title {
@@ -189,9 +190,9 @@
         }
 
         .skill-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: #3563eb;
+            margin-bottom: 1rem;
         }
 
         .skill-card h3 {
@@ -246,8 +247,19 @@
                 margin: 0 auto;
             }
 
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+                white-space: normal;
+            }
+
             .hero-buttons {
                 justify-content: center;
+                flex-direction: column;
+                gap: 1rem;
             }
 
             .hero-location {
@@ -259,49 +271,56 @@
 
 
     .hero-title {
-        font-size: 4.5rem;
-        font-weight: 800;
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-        white-space: nowrap;
-        overflow: hidden;
-        position: relative;
-        width: fit-content;
-        background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        clip-path: inset(0 100% 0 0); /* Initially hidden */
-        animation: typing 4s steps(20, end) forwards; /* Typing effect */
-    }
+          font-size: 4.5rem;
+          font-weight: 800;
+          line-height: 1.1;
+          margin-bottom: 1.5rem;
+          white-space: nowrap;
+          overflow: hidden;
+          position: relative;
+          width: fit-content;
+          background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          clip-path: inset(0 100% 0 0); /* Initially hidden */
+          animation: typing 4s steps(20, end) forwards; /* Typing effect */
+     }
 
-    .hero-title::after {
-        content: '';
-        position: absolute;
-        right: -4px; /* Cursor position */
-        top: 0;
-        height: 100%;
-        width: 3px;
-        background: var(--primary);
-        animation: blink 0.5s step-end infinite; /* Blinking effect */
-    }
+     .hero-title::after {
+          content: '';
+          position: absolute;
+          right: -4px; /* Cursor position */
+          top: 0;
+          height: 100%;
+          width: 3px;
+          background: var(--primary);
+          animation: blink 0.5s step-end infinite; /* Blinking effect */
+     }
 
-    @keyframes typing {
-        from {
-            clip-path: inset(0 100% 0 0); /* Text hidden */
-        }
-        to {
-            clip-path: inset(0 0 0 0); /* Text revealed */
-        }
-    }
+     @keyframes typing {
+          from {
+                clip-path: inset(0 100% 0 0); /* Text hidden */
+          }
+          to {
+                clip-path: inset(0 0 0 0); /* Text revealed */
+          }
+     }
 
-    @keyframes blink {
-        50% {
-            background: transparent; /* Blink effect */
-        }
-        100% {
-            background: var(--primary);
-        }
-    }
+     @keyframes blink {
+          50% {
+                background: transparent; /* Blink effect */
+          }
+          100% {
+                background: var(--primary);
+          }
+     }
+
+     @media (max-width: 768px) {
+          .hero-title {
+                font-size: 3rem;
+                white-space: normal; /* Allow text to wrap */
+          }
+     }
 
     </style>
 </head>
@@ -313,7 +332,7 @@
                     <img src="{{ '/assets/images/me.webp' | relative_url }}" alt="Chernet Asmamaw" class="profile-img">
                 </div>
                 <div class="hero-text">
-                    <h1 class="hero-title">Hi, I'm Chernet!</h1>
+                    <h1 class="hero-title" style="background: linear-gradient(to right, #74748b, #3563eb); -webkit-background-clip: text; color: transparent; font-weight: 700;">Hi, I'm Chernet!</h1>
                     <p class="hero-subtitle" style="font-family: Verdana">Crafting innovative digital solutions through Full-Stack Development</p>
                     
                     <div class="hero-buttons">
@@ -333,7 +352,7 @@
 
     <section class="skills-section">
         <div class="container">
-            <h2 class="section-title">What I Do</h2>
+            <h2 class="section-title" style="background: linear-gradient(to right, #74748b, #3563eb); -webkit-background-clip: text; color: transparent;">What I Do</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <div class="skill-icon">
