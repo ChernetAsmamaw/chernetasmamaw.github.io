@@ -248,6 +248,7 @@
             }
 
             .hero-text {
+                align-items: center;
                 text-align: center;
             }
 
@@ -332,7 +333,7 @@
                     <img src="{{ '/assets/images/me.webp' | relative_url }}" alt="Chernet Asmamaw" class="profile-img">
                 </div>
                 <div class="hero-text">
-                    <h1 class="hero-title" style="background: linear-gradient(to right, #74748b, #3563eb); -webkit-background-clip: text; color: transparent; font-weight: 700;">Hi, I'm Chernet!</h1>
+                    <h1 class="hero-title" style="background: linear-gradient(to right, #74748b, #3563eb); -webkit-background-clip: text; color: transparent; font-weight: 700;">Hi, I'm Chernet 🫶</h1>
                     <p class="hero-subtitle" style="font-family: Verdana">Crafting innovative digital solutions through Full-Stack Development</p>
                     
                     <div class="hero-buttons">
