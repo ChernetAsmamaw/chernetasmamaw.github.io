@@ -24,10 +24,6 @@ description: "Personal portfolio website"
 
 baseurl: "" 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7a56c14 (ui updates and yml file)
 # Navigation
 nav_links:
   - title: "About"
