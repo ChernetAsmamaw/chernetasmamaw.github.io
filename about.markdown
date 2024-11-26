@@ -18,7 +18,7 @@
         }
 
         .main-content {
-            min-height: 75vh;
+            min-height: 72vh;
             display: flex;
             align-items: center;
             padding: 4rem 0;
@@ -62,21 +62,28 @@
         }
 
         .about-section h1 {
-            color: #3498db;
+            color: #10477d;
+            font-weight: 700;
             border-bottom: 3px solid #3498db;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
         }
 
+        .about-section {
+            padding: 1rem;
+        }
+
         .about-section p {
             margin-bottom: 1rem;
-            text-align: justify;
+            text-align: start;
+            font-family: San-sarif;
+            padding-right: 0.7rem;
         }
 
         .btn-custom {
             margin: 0.5rem;
             border-radius: 50px;
-            padding: 12px 25px;
+            padding: 10px 20px;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -118,22 +125,22 @@
                     <div class="col-md-8">
                         <div class="about-section">
                             <h1>About Me</h1>
-                            <div class="mb-3">
-                            <p class="lead">
-                                I am a passionate software engineer specializing in creating innovative, impactful solutions to address real-world challenges. With expertise in full-stack development, artificial intelligence, and low-level programming, I continuously strive to push the boundaries of technology.
-                            </p>
-                            </div>
+                            <i class="my-2">
+                                <p class="lead">
+                                    I am a passionate software engineer specializing in creating innovative, impactful solutions to address real-world challenges. With expertise in full-stack development, artificial intelligence, and low-level programming, I continuously strive to push the boundaries of technology.
+                                </p>
+                            </i>
                             <p>
                                 Currently completing my final year at African Leadership University, I have developed comprehensive skills in mobile application development, data analysis, and research methodologies. My academic journey has strengthened my technical expertise and instilled a profound drive for innovation.
                             </p>
                             <p>
                                 I am actively involved in tech communities, collaborating on open-source projects and mentoring aspiring developers. I believe in the transformative power of teamwork and continuous learning to advance technological progress.
                             </p>
-                            <div class="mt-5 pt-2 text-center">
+                            <div class="mt-4 text-left">
                                 <a href="/contact" class="btn btn-primary btn-lg btn-custom">
                                     <i class="fas fa-envelope me-2"></i>Get in Touch
                                 </a>
-                                <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn btn-outline-primary btn-lg btn-custom">
+                                <a href="https://www.linkedin.com/in/chernet-asmamaw/" target="_blank" class="btn btn-outline-primary btn-lg btn-custom">
                                     <i class="fab fa-linkedin me-2"></i>Connect on LinkedIn
                                 </a>
                             </div>

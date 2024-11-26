@@ -1,0 +1,39 @@
+name: Jekyll Build
+
+# Trigger the workflow on every pull request and push to the main branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Step 2: Set up Ruby environment
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.3' # Specify the Ruby version required by Jekyll
+        bundler-cache: true # Cache dependencies for faster builds
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        bundle install
+
+    # Step 4: Build the Jekyll site
+    - name: Build site
+      run: |
+        bundle exec jekyll build
+
+    # Step 5: (Optional) Check for broken links
+    - name: Check for broken links
+      run: |
+        bundle exec jekyll doctor

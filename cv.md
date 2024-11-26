@@ -206,131 +206,387 @@
     <div class="container my-5">
         <!-- Header -->
         <header class="text-center mb-5">
-            <h1>Chernet Asmamaw</h1>
-            <div class="contact-info">
+            <h1 style="background: linear-gradient(135deg, #4a90e2, #6c757d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Chernet Asmamaw</h1>
+            <div class="contact-info" style="background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(108, 117, 125, 0.1));">
                 <span><i class="fas fa-envelope me-2"></i> c.asmamaw@alustudent.com</span>
-                <span><i class="fas fa-phone me-2"></i> +250 79 1500 661</span>
+                <span><i class="fas fa-phone me-2"></i> +251-98-8257-788</span>
                 <span><i class="fas fa-map-marker-alt me-2"></i> Kigali, Rwanda</span>
+            </div>
+            <div class="mt-4">
+                <a href="/assets/pdf/RESUME.pdf" class="btn btn-primary btn-lg" download style="background: linear-gradient(135deg, #4a90e2, #6c757d); border: none;">
+                    <i class="fas fa-download me-2"></i>Download CV
+                </a>
             </div>
         </header>
 
-        <!-- Professional Summary -->
-        <section class="mb-5">
-            <h2 class="section-title">Professional Summary</h2>
-            <div class="experience-card">
-                <p class="lead">
-                    Final-year Software Engineering student at the African Leadership University with a predicted First Class Honors. Skilled in full-stack development, AI tools, and low-level programming. Passionate about solving real-world challenges, I have led projects in education technology, conservation, and community development. Experienced in operations, stakeholder engagement, and building scalable tech solutions.
-                </p>
-            </div>
-        </section>
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --secondary: #6c757d;
+        }
 
-        <!-- Professional Experience -->
-        <section class="mb-5">
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <!-- SOWC -->
-            <div class="experience-card">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="h4 mb-0">Operations Intern</h3>
-                    <span class="text-primary">August 2024 - Present</span>
-                </div>
-                <h4 class="h5 text-secondary mb-3">School of Wildlife Conservation (SOWC)</h4>
-                <ul class="mb-3">
-                    <li>Coordinated events, masterclasses, and field trips, enhancing student and faculty engagement.</li>
-                    <li>Streamlined operational processes, including data management and reporting.</li>
-                    <li>Collaborated on initiatives to expand the impact of conservation-focused programs.</li>
-                </ul>
-                <div>
-                    <span class="badge-custom">Event Management</span>
-                    <span class="badge-custom">Data Analysis</span>
-                    <span class="badge-custom">Collaboration</span>
+        .timeline {
+            position: relative;
+            padding: 0;
+            list-style: none;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            left: 20px;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 12px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-content {
+            margin-left: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card {
+            padding: 1.5rem;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .text-secondary {
+            color: var(--secondary) !important;
+        }
+
+        .badge-custom {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            margin: 0.2rem;
+            border-radius: 20px;
+            background: rgba(74, 144, 226, 0.1);
+            color: var(--primary);
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .badge-custom:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .timeline-list {
+            max-height: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 1.2rem;
+        }
+
+        .timeline-list.collapsed {
+            max-height: 80px;
+        }
+
+        .timeline-list li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .read-more-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .experience-card {
+                padding: 1rem;
+            }
+
+            .timeline-content {
+                margin-left: 35px;
+            }
+
+            .badge-custom {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+                margin: 0.15rem;
+            }
+
+            .read-more-btn {
+                display: block;
+            }
+
+            /* Adjust heading sizes for mobile */
+            .h4 {
+                font-size: 1.1rem;
+            }
+
+            .h5 {
+                font-size: 0.95rem;
+            }
+
+            /* Make badges wrap better on mobile */
+            .badge-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+                margin-top: 0.75rem;
+            }
+        }
+
+        /* Animation for collapse/expand */
+        .timeline-list {
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+
+    <script>
+        // Initialize read more functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to handle the read more toggle
+            function initializeReadMore() {
+                document.querySelectorAll('.timeline-list').forEach(list => {
+                    const readMoreBtn = list.nextElementSibling;
+                    
+                    if (window.innerWidth <= 768) {
+                        list.classList.add('collapsed');
+                        readMoreBtn.style.display = 'block';
+                        
+                        readMoreBtn.addEventListener('click', function() {
+                            const isCollapsed = list.classList.contains('collapsed');
+                            list.classList.toggle('collapsed');
+                            this.textContent = isCollapsed ? 'Read Less' : 'Read More';
+                            
+                            if (isCollapsed) {
+                                list.style.maxHeight = list.scrollHeight + 'px';
+                            } else {
+                                list.style.maxHeight = '80px';
+                            }
+                        });
+                    } else {
+                        list.classList.remove('collapsed');
+                        readMoreBtn.style.display = 'none';
+                        list.style.maxHeight = 'none';
+                    }
+                });
+            }
+
+            // Initialize on load
+            initializeReadMore();
+
+            // Re-initialize on window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(initializeReadMore, 250);
+            });
+        });
+    </script>
+
+    <!-- Professional Summary -->
+    <section class="mb-5">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="experience-card">
+            <p class="lead" style="font-family: sans-serif; font-size: 1.2rem;">
+                Final-year Software Engineering student at the African Leadership University with a First Class Honors. Skilled in full-stack development, AI tools, and low-level programming. Passionate about solving real-world challenges, I have led projects in education technology, conservation, and community development. Experienced in operations, stakeholder engagement, and building scalable tech solutions.
+            </p>      
+        </div>
+    </section>
+
+
+    <!-- Professional Experience -->
+    <section class="mb-5">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <div class="timeline-content">
+                    <div class="experience-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0">Operations Intern</h3>
+                            <span class="text-primary">August 2024 - Present</span>
+                        </div>
+                        <h4 class="h5 text-secondary mb-3">School of Wildlife Conservation (SOWC)</h4>
+                        <ul class="timeline-list">
+                            <li>Worked on data management and analysis for the Business of Conservation Conference (BCC).</li>
+                            <li>Assisted in event management using the Swoogo platform to streamline operations.</li>
+                            <li>Generated data for insights, enhancing my data science skills.</li>
+                            <li>Collaborated closely with SOWC management on 7 initiatives, including masterclasses and hackathons.</li>
+                            <li>Increased conservation efforts and student engagement on the ALU campus.</li>
+                            <li>Improved my research and presentation skills.</li>                 
+                        </ul>
+                        <button class="read-more-btn">Read More</button>
+                        <div class="badge-container">
+                            <span class="badge-custom">Event Management</span>
+                            <span class="badge-custom">Data Analysis</span>
+                            <span class="badge-custom">Collaboration</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Coding Intern -->
-            <div class="experience-card">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="h4 mb-0">Coding Intern</h3>
-                    <span class="text-primary">Jan 2024 - May 2024</span>
-                </div>
-                <h4 class="h5 text-secondary mb-3">The SOZO Foundation | Cape Town, South Africa | Full-time</h4>
-                <ul class="mb-3">
-                    <li>Developed a voting and survey collection app that is now live within SOZO. Assessed the need for and proposed a comprehensive development plan for a student engagement platform, and I’m currently building it using my programming skills.</li>
-                    <li>Organized tech workshops teaching business owners how to utilize tech to scale their businesses. Collaborated with entrepreneurs to develop their venture ideas and business plans, and assisted in developing business websites.</li>
-                    <li>Volunteered in baking, barista training, nail tech, and hair-cutting programs, acquiring diverse practical skills.</li>
-                </ul>
-                <div>
-                    <span class="badge-custom">App Development</span>
-                    <span class="badge-custom">Tech Workshops</span>
-                    <span class="badge-custom">Entrepreneurship</span>
-                </div>
-            </div>
-            <!-- Freshwater and Community Conservation Extern -->
-            <div class="experience-card">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="h4 mb-0">Freshwater and Community Conservation Extern</h3>
-                    <span class="text-primary">Feb 2024 - Apr 2024</span>
-                </div>
-                <h4 class="h5 text-secondary mb-3">NGS & TNC | Remote | Part-time</h4>
-                <ul class="mb-3">
-                    <li>Conducted a landscape and gap analysis to identify freshwater challenges in Ethiopia. Collaborated with community leaders and experts to gather insights. Utilized primary and secondary research methods to investigate ongoing efforts and underlying issues.</li>
-                    <li>Created a story map using ArcGIS StoryMaps to communicate findings effectively and raise awareness, enhancing my research, data analysis, and storytelling skills, while also contributing actionable recommendations for local freshwater conservation initiatives.</li>
-                </ul>
-                <div>
-                    <span class="badge-custom">Research</span>
-                    <span class="badge-custom">Data Analysis</span>
-                    <span class="badge-custom">Storytelling</span>
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <div class="timeline-content">
+                    <div class="experience-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0">Coding Intern</h3>
+                            <span class="text-primary">January 2024 - May 2024</span>
+                        </div>
+                        <h4 class="h5 text-secondary mb-3">The SOZO Foundation</h4>
+                        <ul class="timeline-list">
+                            <li>Developed a voting and survey collection app that is now live within SOZO.</li>
+                            <li>Assessed the need for and proposed a comprehensive development plan for a student engagement platform, and built it using programming skills.</li>
+                            <li>Organized tech workshops teaching business owners how to utilize tech to scale their businesses.</li>
+                            <li>Collaborated with entrepreneurs to develop their venture ideas and business plans, and assisted in developing business websites.</li>
+                            <li>Volunteered in baking, barista training, nail tech, and hair-cutting programs, acquiring diverse practical skills.</li>
+                        </ul>
+                        <button class="read-more-btn">Read More</button>
+                        <div class="badge-container">
+                            <span class="badge-custom">App Development</span>
+                            <span class="badge-custom">Tech Workshops</span>
+                            <span class="badge-custom">Entrepreneurship</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Technical Intern -->
-            <div class="experience-card">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="h4 mb-0">Technical Intern</h3>
-                    <span class="text-primary">Sept 2023 - Dec 2023</span>
-                </div>
-                <h4 class="h5 text-secondary mb-3">Caribou Digital | UK/Remote | Full-time</h4>
-                <ul class="mb-3">
-                    <li>Contributed to the development of an internal tool aimed at enhancing Caribu's operational processes, reducing manual tasks, and improving efficiency through AI. Helped with the project brief and documentation, showcasing my writing and organizational skills.</li>
-                    <li>Developed a prototype for the final app using the Retrieval Augmented Generation (RAG) process, which required learning multiple new technologies, enhancing my technical skills, and expanding my knowledge of AI and machine learning.</li>
-                </ul>
-                <div>
-                    <span class="badge-custom">AI Development</span>
-                    <span class="badge-custom">Project Documentation</span>
-                    <span class="badge-custom">Machine Learning</span>
-                </div>
-            </div>
-
-            <!-- Gaming Market Research & Analytics Externship -->
-            <div class="experience-card">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h3 class="h4 mb-0">Gaming Market Research & Analytics Externship</h3>
-                    <span class="text-primary">Nov 2023 - Dec 2023</span>
-                </div>
-                <h4 class="h5 text-secondary mb-3">Mobalytics | Paragon One | Remote | Part-time</h4>
-                <ul class="mb-3">
-                    <li>Analyzed the competitive landscape of FPS and MOBA gaming genres, focusing on specific mobile games to enhance my understanding of the mobile gaming industry and improve my research and analytical skills.</li>
-                    <li>Organized a presentation at the end of my internship, offering the Mobalytics team insights into key topics such as player personas, experience, psychology, and game revenue models, as Mobalytics evaluates opportunities for market expansion.</li>
-                </ul>
-                <div>
-                    <span class="badge-custom">Market Research</span>
-                    <span class="badge-custom">Analytical Skills</span>
-                    <span class="badge-custom">Presentation</span>
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <div class="timeline-content">
+                    <div class="experience-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0">Freshwater and Community Conservation Extern</h3>
+                            <span class="text-primary">Feb 2024 - Apr 2024</span>
+                        </div>
+                        <h4 class="h5 text-secondary mb-3">NGS & TNC | Remote | Part-time</h4>
+                        <ul class="timeline-list">
+                            <li>Conducted a landscape and gap analysis to identify freshwater challenges in Ethiopia.</li>
+                            <li>Collaborated with community leaders and experts to gather insights.</li>
+                            <li>Utilized primary and secondary research methods to investigate ongoing efforts and underlying issues.</li>
+                            <li>Created a story map using ArcGIS StoryMaps to communicate findings effectively and raise awareness.</li>
+                            <li>Contributed actionable recommendations for local freshwater conservation initiatives.</li>
+                        </ul>
+                        <button class="read-more-btn">Read More</button>
+                        <div class="badge-container">
+                            <span class="badge-custom">Research</span>
+                            <span class="badge-custom">Data Analysis</span>
+                            <span class="badge-custom">Storytelling</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <div class="timeline-content">
+                    <div class="experience-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0">Technical Intern</h3>
+                            <span class="text-primary">Sept 2023 - Dec 2023</span>
+                        </div>
+                        <h4 class="h5 text-secondary mb-3">Caribou Digital | UK/Remote | Full-time</h4>
+                        <ul class="timeline-list">
+                            <li>Contributed to developing an internal tool to enhance Caribu's operational processes, reducing manual tasks and improving efficiency through AI.</li>
+                            <li>Assisted with the project brief and documentation, showcasing my writing and organizational skills.</li>
+                            <li>Developed a prototype for the final app using the Retrieval Augmented Generation (RAG) process.</li>
+                            <li>Learned multiple new technologies, enhancing my technical skills and expanding my knowledge of AI and machine learning.</li>
+                            <li>Collaborated with team members to ensure the successful implementation of the tool.</li>                 
+                        </ul>
+                        <button class="read-more-btn">Read More</button>
+                        <div class="badge-container">
+                            <span class="badge-custom">AI</span>
+                            <span class="badge-custom">Machine Learning</span>
+                            <span class="badge-custom">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Add other experience cards similarly -->
-        </section>
+            <div class="timeline-item">
+                <div class="timeline-icon"></div>
+                <div class="timeline-content">
+                    <div class="experience-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0">Gaming Market Research & Analytics Externship</h3>
+                            <span class="text-primary">Nov 2023 - Dec 2023</span>
+                        </div>
+                        <h4 class="h5 text-secondary mb-3">Mobalytics | Paragon One | Remote | Part-time</h4>
+                        <ul class="timeline-list">
+                            <li>Conducted competitive analysis of FPS and MOBA mobile games to understand the mobile gaming industry.</li>
+                            <li>Enhanced research and analytical skills through detailed market analysis.</li>
+                            <li>Identified key player personas and their gaming experiences.</li>
+                            <li>Explored player psychology and its impact on game engagement.</li>
+                            <li>Presented insights on game revenue models and market expansion opportunities to the Mobalytics team.</li>                 
+                        </ul>
+                        <button class="read-more-btn">Read More</button>
+                        <div class="badge-container">
+                            <span class="badge-custom">Market Research</span>
+                            <span class="badge-custom">Analytics</span>
+                            <span class="badge-custom">Presentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more timeline items as needed -->
+        </div>
+    </section>
+
+      
 
         <!-- Certifications -->
         <section class="mb-5">
             <h2 class="section-title">Certifications</h2>
             <div class="row g-4">
-                <!-- Certificate cards with the same structure but enhanced styling -->
+                
+                <div class="col-md-3 col-sm-6">
+                    <a href="https://coursera.org/share/7bed351acf34e1a4db3f631e92e6c09e" target="_blank" style="text-decoration: none;">
+                        <div class="certificate-frame">
+                            <h5 class="certificate-title">Python For Everybody Specialization</h5>
+                            <p class="text-secondary mb-1">Coursera | 5 Certificates</p>
+                            <p class="text-secondary mb-2">University of Michigan</p>
+                            <p class="text-success mb-0">December 2023</p>
+                        </div>
+                    </a>
+                </div>
+
                 <div class="col-md-3 col-sm-6">
                     <div class="certificate-frame">
-                        <h5 class="certificate-title">Meta Backend Specialization</h5>
+                        <h5 class="certificate-title">Meta Back-End Developer Professional Certificates</h5>
                         <p class="text-secondary mb-1">Coursera | 7 Certificates</p>
                         <p class="text-secondary mb-2">Meta</p>
                         <p class="text-success mb-0">May 2024</p>
@@ -339,7 +595,7 @@
 
                 <div class="col-md-3 col-sm-6">
                     <div class="certificate-frame">
-                        <h5 class="certificate-title">Meta Front Specialization</h5>
+                        <h5 class="certificate-title">Meta Front-End Developer Professional Certificates</h5>
                         <p class="text-secondary mb-1">Coursera | 7 Certificates</p>
                         <p class="text-secondary mb-2">Meta</p>
                         <p class="text-success mb-0">July 2024</p>
@@ -348,10 +604,10 @@
 
                 <div class="col-md-3 col-sm-6">
                     <div class="certificate-frame">
-                        <h5 class="certificate-title">Meta Front Specialization</h5>
-                        <p class="text-secondary mb-1">Coursera | 7 Certificates</p>
-                        <p class="text-secondary mb-2">Meta</p>
-                        <p class="text-success mb-0">July 2024</p>
+                        <h5 class="certificate-title">Algorithmic Toolbox: Data Structures and Algorithms Specialization</h5>
+                        <p class="text-secondary mb-2">Coursera</p>
+                        <p class="text-secondary mb-2">University of California San Diego</p>
+                        <p class="text-success mb-0">January 2023</p>
                     </div>
                 </div>
 
@@ -366,15 +622,6 @@
 
                 <div class="col-md-3 col-sm-6">
                     <div class="certificate-frame">
-                        <h5 class="certificate-title">Python For Everybody Specialization</h5>
-                        <p class="text-secondary mb-1">Coursera | 5 Certificates</p>
-                        <p class="text-secondary mb-2">University of Michigan</p>
-                        <p class="text-success mb-0">December 2023</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="certificate-frame">
                         <h5 class="certificate-title">Internet History, Technology, and Security</h5>
                         <p class="text-secondary mb-1">Coursera</p>
                         <p class="text-secondary mb-2">University of Michigan</p>
@@ -384,17 +631,8 @@
 
                 <div class="col-md-3 col-sm-6">
                     <div class="certificate-frame">
-                        <h5 class="certificate-title">Data Structures and Algorithms Specialization</h5>
-                        <p class="text-secondary mb-1">Algorithmic Toolbox</p>
-                        <p class="text-secondary mb-2">University of California San Diego</p>
-                        <p class="text-success mb-0">January 2023</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="certificate-frame">
                         <h5 class="certificate-title">Google IT Automation with Python Professional Certificate</h5>
-                        <p class="text-secondary mb-1">Google</p>
+                        <p class="text-secondary mb-2">Coursera</p>
                         <p class="text-secondary mb-2">Google</p>
                         <p class="text-success mb-0">January 2023</p>
                     </div>
@@ -403,7 +641,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="certificate-frame">
                         <h5 class="certificate-title">Configuration Management and the Cloud</h5>
-                        <p class="text-secondary mb-1">Google</p>
+                        <p class="text-secondary mb-2">Coursera</p>
                         <p class="text-secondary mb-2">Google</p>
                         <p class="text-success mb-0">January 2023</p>
                     </div>
@@ -411,25 +649,19 @@
 
                 <div class="col-md-3 col-sm-6">
                     <div class="certificate-frame">
-                        <h5 class="certificate-title">DevOps Culture and Mindset</h5>
+                        <h5 class="certificate-title">DevOps Culture and Mindset Course</h5>
+                        <p class="text-secondary mb-2">Coursera</p>
                         <p class="text-secondary mb-1">University of California, Davis</p>
                         <p class="text-success mb-0">January 2023</p>
                     </div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="certificate-frame">
-                        <h5 class="certificate-title">Introduction to GitHub Actions</h5>
-                        <p class="text-secondary mb-1">Duke University</p>
-                        <p class="text-success mb-0">January 2023</p>
-                    </div>
-                </div>
 
                 <div class="col-md-3 col-sm-6">
                     <div class="certificate-frame">
                         <h5 class="certificate-title">IBM DevOps and Software Engineering Professional Certificate</h5>
+                        <p class="text-secondary mb-2">Coursera</p>
                         <p class="text-secondary mb-1">Introduction to DevOps</p>
-                        <p class="text-secondary mb-2">IBM</p>
                         <p class="text-success mb-0">January 2023</p>
                     </div>
                 </div>
@@ -486,7 +718,7 @@
 
         <!-- Hobbies Section -->
         <section class="section-header mb-5">
-            <h2 class="section-title text-center text-primary mb-4">Hobbies</h2>
+            <h2 class="section-title">Hobbies</h2>
             <div class="row text-center">
                 <div class="col-md-6 mb-3">
                     <div class="p-3 shadow-sm rounded bg-light">🏃‍♂️ <strong>Running & Hiking</strong></div>

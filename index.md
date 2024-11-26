@@ -67,7 +67,7 @@
         .profile-img:hover {
             transform: translateY(-5px);
         }
-
+<!-- 
         .hero-title {
             font-size: 4.5rem;
             font-weight: 800;
@@ -76,7 +76,7 @@
             background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
+        } -->
 
         .hero-subtitle {
             font-size: 1.5rem;
@@ -254,6 +254,55 @@
                 justify-content: center;
             }
         }
+
+
+
+
+    .hero-title {
+        font-size: 4.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        width: fit-content;
+        background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        clip-path: inset(0 100% 0 0); /* Initially hidden */
+        animation: typing 4s steps(20, end) forwards; /* Typing effect */
+    }
+
+    .hero-title::after {
+        content: '';
+        position: absolute;
+        right: -4px; /* Cursor position */
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background: var(--primary);
+        animation: blink 0.5s step-end infinite; /* Blinking effect */
+    }
+
+    @keyframes typing {
+        from {
+            clip-path: inset(0 100% 0 0); /* Text hidden */
+        }
+        to {
+            clip-path: inset(0 0 0 0); /* Text revealed */
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            background: transparent; /* Blink effect */
+        }
+        100% {
+            background: var(--primary);
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -265,7 +314,7 @@
                 </div>
                 <div class="hero-text">
                     <h1 class="hero-title">Hi, I'm Chernet!</h1>
-                    <p class="hero-subtitle">Crafting innovative digital experiences through Full-Stack Development</p>
+                    <p class="hero-subtitle" style="font-family: Verdana">Crafting innovative digital solutions through Full-Stack Development</p>
                     
                     <div class="hero-buttons">
                         <a href="/cv" class="btn btn-primary">
@@ -340,5 +389,8 @@
             </div>
         </div>
     </section>
+
+
+
 </body>
 </html>

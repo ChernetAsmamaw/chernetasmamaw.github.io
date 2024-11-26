@@ -36,15 +36,6 @@
             margin-bottom: 4rem;
         }
 
-        .section-header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
         .section-header p {
             color: var(--text-secondary);
             font-size: 1.125rem;
@@ -129,7 +120,8 @@
         }
 
         .project-features h3 {
-            font-size: 1.25rem;
+            font-size: 1rem;
+            font-weight: bold;
             margin-bottom: 0.5rem;
         }
 
@@ -143,6 +135,7 @@
             padding-left: 1.5rem;
             margin-bottom: 0.5rem;
             color: var(--text-secondary);
+            font-size: 14px;
         }
 
         .project-features li::before {
@@ -228,87 +221,106 @@
 <body>
     <div class="container">
         <header class="section-header">
-            <h1>Featured Projects</h1>
-            <p>A showcase of my technical expertise and problem-solving abilities</p>
+            <h1 style="background: linear-gradient(to right, #8b4513, #2563eb); -webkit-background-clip: text; color: transparent; font-weight: 700;">Featured Projects</h1>
+            <p style="color: #004b6f;">A showcase of my technical expertise and problem-solving abilities</p>
         </header>
-        <div class="projects-grid">
-            <div class="project-card">
-            <img src="/assets/images/project1.png" alt="Community Connect" class="project-image">
-            <div class="project-content">
-                <h2 class="project-title">Community Connect</h2>
-                <div class="project-tags">
-                <span class="project-tag">Next.js</span>
-                <span class="project-tag">React</span>
-                <span class="project-tag">MongoDB</span>
-                </div>
-                <p class="project-description">
-                A platform built to connect communities with local services and artisans, fostering local engagement and support.
-                </p>
-                <div class="project-features">
-                <h3>Key Features</h3>
-                <ul>
-                    <li>Service and artisan directory</li>
-                    <li>Community event listings</li>
-                    <li>User reviews and ratings</li>
-                    <li>Location-based search</li>
-                </ul>
-                </div>
-                <div class="project-stats">
-                <div class="project-stat">
-                    <div class="project-stat-value">xx</div>
-                    <div class="project-stat-label">Active Users</div>
-                </div>
-                <div class="project-stat">
-                    <div class="project-stat-value">xx</div>
-                    <div class="project-stat-label">Services Listed</div>
-                </div>
-                </div>
-                <div class="project-actions">
-                <a href="#" class="btn btn-primary">Live Demo</a>
-                <a href="#" class="btn btn-outline">GitHub</a>
-                </div>
-            </div>
-            </div>
+         <div class="projects-grid">
+             <div class="project-card">
+              <img src="/assets/images/project1.png" alt="Community Connect" class="project-image">
+              <div class="project-content">
+                  <h2 class="project-title">Community Connect</h2>
+                  <div class="project-tags">
+                   <span class="project-tag">Next.js</span>
+                   <span class="project-tag">React</span>
+                   <span class="project-tag">MongoDB</span>
+                  </div>
+                  <p class="project-description">
+                   Connect communities with local services and artisans.
+                  </p>
+                  <div class="project-features">
+                   <h3>Key Features</h3>
+                   <ul class="features-list">
+                    <li><strong>Service and Artisan Directory:</strong> Discover local businesses and talented artisans in your area.</li>
+                    <li><strong>Location-Based Search:</strong> Find businesses and services tailored to your proximity.</li>
+                    <li><strong>User Reviews and Ratings:</strong> Make confident decisions with trusted feedback from your community.</li>
+                   </ul>
+                  </div>
+                  <div class="project-actions">
+                   <a href="https://community-connect-five.vercel.app/" target='_blank' class="btn btn-primary">Live Demo</a>
+                   <a href="https://github.com/ChernetAsmamaw/Community-Connect.git" class="btn btn-outline">GitHub</a>
+                  </div>
+              </div>
+             </div>
+             <div class="project-card">
+              <div class="project-content">
+                  <h2 class="project-title"> Small React Projects</h2>
+                  <div class="project-tags">
+                   <span class="project-tag">React</span>
+                   <span class="project-tag">JavaScript</span>
+                   <span class="project-tag">CSS</span>
+                  </div>
+                  <div class="project-description">
+                   <p>
+                    Explore my simple projects built while learning React. Both the Budget as well as the weather app are simple yet sophisticated with graphs and pie charts.
+                   </p>
+                  </div>
+                  <div class="project-features">
+                   <h3>Budgeting App</h3>
+                   <ul class="features-list">
+                    <li><strong>Expense Tracking:</strong> Monitor your spending and manage your budget.</li>
+                    <li><strong>Category Management:</strong> Organize expenses into categories.</li>
+                   </ul>
+                   <div class="project-actions">
+                    <a href="https://chernetasmamaw.github.io/Budgeting-app/" target='_blank' class="btn btn-primary">Live Demo</a>
+                    <a href="https://github.com/ChernetAsmamaw/Budgeting-App" class="btn btn-outline">GitHub</a>
+                   </div>
+                  </div>
+                  <hr style="margin: 2rem 0;">
+                  <div class="project-features">
+                   <h3>Weather App</h3>
+                   <ul class="features-list">
+                    <li><strong>Weather:</strong> Get real-time weather updates for any location</li>
+                    <li><strong>Forcast:</strong> View the wather for the next 24h.</li>
+                    <li><strong>Search by City:</strong> Find weather information by city or country.</li>
+                   </ul>
+                   <div class="project-actions">
+                    <a href="https://chernetasmamaw.github.io/Weather_APP_TS-REACT/" target='_blank' class="btn btn-primary">Live Demo</a>
+                    <a href="https://github.com/ChernetAsmamaw/Weather_APP_TS-REACT" class="btn btn-outline">GitHub</a>
+                   </div>
+                  </div>
+                  <style>
+                    .card {
+                        border-radius: 15px;
+                        background-color: #ffffff;
+                    }
 
-            <div class="project-card">
-                <img src="/assets/images/project2.png" alt="AI Chat Application" class="project-image">
-                <div class="project-content">
-                    <h2 class="project-title">AI Chat Application</h2>
-                    <div class="project-tags">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">TensorFlow</span>
-                        <span class="project-tag">Flask</span>
-                        <span class="project-tag">Vue.js</span>
-                    </div>
-                    <p class="project-description">
-                        An intelligent chat application using natural language processing for automated customer support.
-                    </p>
-                    <div class="project-features">
-                        <h3>Key Features</h3>
-                        <ul>
-                            <li>Natural language understanding</li>
-                            <li>Multi-language support</li>
-                            <li>Integration with CRM systems</li>
-                            <li>Analytics dashboard</li>
-                        </ul>
-                    </div>
-                    <div class="project-stats">
-                        <div class="project-stat">
-                            <div class="project-stat-value">xx</div>
-                            <div class="project-stat-label">Resolution Rate</div>
-                        </div>
-                        <div class="project-stat">
-                            <div class="project-stat-value">xx</div>
-                            <div class="project-stat-label">Daily Chats</div>
-                        </div>
-                    </div>
-                    <div class="project-actions">
-                        <a href="#" class="btn btn-primary">Case Study</a>
-                        <a href="#" class="btn btn-outline">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    .logo-placeholder {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 1.2rem;
+                        color: white;
+                        font-weight: bold;
+                    }
+
+                    .project-actions .btn {
+                        margin-top: 10px;
+                    }
+
+                    .card .row > div {
+                        text-align: center;
+                    }
+
+                    .card .row .border-end {
+                        border-color: #d1d5db;
+                    }
+
+                  </style>
+              </div>
+             </div>
+         </div>
+        
     </div>
+    
 </body>
 </html>

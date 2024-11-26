@@ -1,74 +1,98 @@
-<div class="container py-5">
+<div class="container">
     <style>
         :root {
             --primary: #2563eb;
             --primary-light: #60a5fa;
             --secondary: #64748b;
-            --success: #10b981;
             --bg-light: #f8fafc;
             --text-primary: #0f172a;
             --text-secondary: #475569;
+            --linkedin-color: #0077b5;
+            --github-color: #333333;
+            --twitter-color: #1da1f2;
+            --ocean-blue: #0066cc;
         }
 
-        .contact-header {
-            text-align: center;
-            margin-bottom: 4rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 0;
             position: relative;
         }
 
-        .contact-header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            animation: fadeInDown 0.8s ease-out;
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        .contact-header p {
-            font-size: 1.25rem;
+        .section-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #8b4513, #2563eb);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            margin-top: 5rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            background-color: white;
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin: auto;
+            width: 100%;
+            max-width: 1100px;
         }
 
         .contact-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .contact-card {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             background: white;
             border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            animation: fadeIn 0.8s ease-out 0.4s backwards;
-        }
-
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
         }
 
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-card:hover::before {
-            opacity: 1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .contact-card i {
@@ -80,42 +104,80 @@
         .contact-card h5 {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--text-primary);
             margin-bottom: 0.75rem;
+            color: var(--text-primary);
         }
 
         .contact-card p {
             color: var(--text-secondary);
-            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
-        .contact-form-container {
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            filter: brightness(1.1);
+        }
+
+        .social-btn.linkedin {
+            background-color: var(--linkedin-color);
+        }
+
+        .social-btn.github {
+            background-color: var(--github-color);
+        }
+
+        .social-btn.twitter {
+            background-color: var(--twitter-color);
+        }
+
+        .social-btn img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .contact-form-section {
+            background-color: ;
+            min-height: 80vh;
+        }
+
+        .form-container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-            animation: fadeIn 0.8s ease-out 0.6s backwards;
-        }
-
-        .form-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 2rem;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .form-group label {
             display: block;
             font-weight: 500;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
         }
 
         .form-control {
@@ -123,255 +185,160 @@
             padding: 1rem;
             border: 2px solid #e2e8f0;
             border-radius: 0.75rem;
-            transition: all 0.3s ease;
             font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--bg-light);
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            border-color: var(--ocean-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
         }
 
         textarea.form-control {
+            min-height: 130px;
             resize: vertical;
-            min-height: 120px;
         }
 
         .submit-btn {
-            background: var(--primary);
+            background: var(--ocean-blue);
             color: white;
-            font-weight: 600;
-            font-size: 1.125rem;
-            padding: 1rem 2rem;
             border: none;
+            margin-top: 1rem;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 500;
             border-radius: 0.75rem;
-            width: 100%;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .submit-btn:hover {
-            background: var(--primary-light);
+            background: #0077ee;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .social-section {
-            text-align: center;
-            margin-top: 4rem;
-            animation: fadeIn 0.8s ease-out 0.8s backwards;
-        }
-
-        .social-section h2 {
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--text-secondary);
             font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 2rem;
+            cursor: pointer;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .social-btn i {
-            font-size: 1.25rem;
-        }
-
-        .social-btn.linkedin {
-            background: #0077b5;
-            color: white;
-        }
-
-        .social-btn.github {
-            background: #24292e;
-            color: white;
-        }
-
-        .social-btn.twitter {
-            background: #1da1f2;
-            color: white;
-        }
-
-        .social-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            opacity: 0.9;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
             }
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        .social-section {
-    margin-top: 2rem;
-}
-
-.social-links a {
-    background: rgba(37, 99, 235, 0.1);
-    color: dark;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-3px);
-}
-
-.social-links img {
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.social-links img:hover {
-    transform: scale(1.1);
-}
-
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .contact-form-container {
-                padding: 2rem;
+        @media (max-width: 968px) {
+            .contact-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .social-links {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 1rem;
             }
             
             .social-btn {
                 justify-content: center;
             }
+
+            .section-header h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 
-    <div class="contact-header">
-        <h1>Get in Touch</h1>
-        <p>Have a project in mind or want to collaborate? I'd love to hear from you!</p>
-    </div>
+    <!-- Section 1: Contact Details -->
+    <section>
+        <div class="section-header">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out anytime. I'm always open to collaborating!</p>
+        </div>
+        
+        <div class="contact-details">
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h5>Email</h5>
+                    <p>c.asmamaw@alustudent.com</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h5>Location</h5>
+                    <p>Kigali, Rwanda</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-clock"></i>
+                    <h5>Available Hours</h5>
+                    <p>Tuesday - Friday: 9:00 AM - 6:00 PM CAT</p>
+                </div>
+            </div>
 
-    <div class="contact-cards">
-        <div class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <h5>Email</h5>
-            <p>c.asmamaw@alustudent.com</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/chernet-asmamaw/" class="social-btn linkedin">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"> LinkedIn
+                </a>
+                <a href="https://github.com/chernetasmamaw" class="social-btn github">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"> GitHub
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="social-btn twitter">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"> Twitter
+                </a>
+            </div>
         </div>
-        <div class="contact-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <h5>Location</h5>
-            <p>Kigali, Rwanda</p>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <div class="contact-card">
-            <i class="fas fa-clock"></i>
-            <h5>Available Hours</h5>
-            <p>Tuesday - Friday: 9:00 AM - 6:00 PM CAT</p>
-        </div>
-    </div>
+    </section>
 
-    <div class="contact-form-container">
-        <h2 class="form-title">Send Me a Message</h2>
-        <form id="contactForm" action="/submit-form" method="POST">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+    <!-- Section 2: Contact Form -->
+    <section class="contact-form-section">
+        <div class="form-container">
+            <div class="section-header">
+                <h1>Send Me a Message</h1>
+                <p>Got a question or proposal? Go ahead!</p>
             </div>
             
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" class="form-control" id="subject" name="subject" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">
-                Send Message
-                <i class="fas fa-paper-plane ml-2"></i>
-            </button>
-        </form>
-    </div>
-
-    <div class="social-section text-center">
-    <h2 class="mb-4 fw-bold text-primary">Let's Connect</h2>
-    <div class="social-links d-flex justify-content-center gap-3">
-
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/in/yourusername" class="social-btn linkedin d-flex align-items-center gap-2 text-decoration-none">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" width="30" height="30">
-            LinkedIn
-        </a>
-        <!-- GitHub -->
-        <a href="https://github.com/yourusername" class="social-btn github d-flex align-items-center gap-2 text-decoration-none">
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="30" height="30">
-            GitHub
-        </a>
-        <!-- Twitter -->
-        <a href="https://twitter.com/yourusername" class="social-btn twitter d-flex align-items-center gap-2 text-decoration-none">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Logo" width="30" height="30">
-            Twitter
-        </a>
-    </div>
-</div>
-
+            <form id="contactForm" action="/submit-form" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" required></textarea>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
 </div>
